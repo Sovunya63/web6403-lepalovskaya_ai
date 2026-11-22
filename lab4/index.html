@@ -7,24 +7,24 @@
 </head>
 <body>
 
-<nav>
-    <a href="index.html" class="active">
-        <img src="icons/home.png" class="nav-icon" alt="">
+<nav class="nav">
+    <a href="index.html" class="nav__link nav__link_active">
+        <img src="icons/home.png" class="nav__icon" alt="">
         Главная
     </a>
 
-    <a href="memes.html">
-        <img src="icons/gallery.png" class="nav-icon" alt="">
+    <a href="memes.html" class="nav__link">
+        <img src="icons/gallery.png" class="nav__icon" alt="">
         Подборка мемов
     </a>
 
-    <a href="grade.html">
-        <img src="icons/grade.png" class="nav-icon" alt="">
+    <a href="grade.html" class="nav__link">
+        <img src="icons/grade.png" class="nav__icon" alt="">
         Оценка мемов
     </a>
 
-    <a href="addmeme.html">
-        <img src="icons/add.png" class="nav-icon" alt="">
+    <a href="addmeme.html" class="nav__link">
+        <img src="icons/add.png" class="nav__icon" alt="">
         Добавить мем
     </a>
 </nav>
@@ -36,16 +36,22 @@
         <p>На случай, если интернет отключат - у нас останется этот html файл</p>
     </div>
 
-    <div class="meme">
+    <div class="meme meme_day">
         <h2>Мем дня</h2>
 
         <img
                 src="images/img1.jpg"
                 alt="Мем я вам нравлюсь да немношка"
-                class="meme-of-day"
+                class="meme__image"
         >
 
-        <p>ну так сказать жиза да</p>
+        <p class="meme__text">ну так сказать жиза да</p>
+    </div>
+</div>
+
+<div class="dvd">
+    <div class="dvd__vertical">
+        <img src="icons/dvd.png" class="dvd__image" alt="">
     </div>
 </div>
 </body>

@@ -71,7 +71,7 @@ h2 {
 }
 
 /* Меню */
-nav {
+.nav {
     background: linear-gradient(
             to bottom,
             var(--color-white),
@@ -86,7 +86,7 @@ nav {
     box-shadow: 0 4px 10px var(--color-shadow-strong);
 }
 
-nav a {
+.nav__link {
     display: inline-flex;
     align-items: center;
     gap: 7px;
@@ -107,14 +107,14 @@ nav a {
     border-radius: 8px;
 }
 
-.nav-icon {
+.nav__icon {
     width: 26px;
     height: 26px;
     margin: 0;
     border-radius: 0;
 }
 
-nav a:hover {
+.nav__link:hover {
     background: linear-gradient(
             to bottom,
             var(--color-green-light),
@@ -122,7 +122,7 @@ nav a:hover {
     );
 }
 
-nav a.active {
+.nav__link_active {
     background: linear-gradient(
             to bottom,
             var(--color-active-light),
@@ -154,7 +154,7 @@ img {
     box-shadow: 0 4px 10px var(--color-shadow);
 }
 
-.meme p {
+.meme__text {
     margin-bottom: 0;
 }
 
@@ -211,20 +211,20 @@ th {
 }
 
 /* Карточки только внутри галереи */
-.gallery .meme {
+.meme_gallery {
     padding: 0;
     margin-bottom: 20px;
     overflow: hidden;
 }
 
-.gallery .meme img {
+.meme_gallery .meme__image {
     width: 100%;
     margin: 0;
     border-radius: 0;
 }
 
 /* Подписи */
-.gallery .meme p {
+.meme_gallery .meme__text {
     margin: 0;
     padding: 12px;
 
@@ -243,7 +243,6 @@ body > p {
     border-radius: 10px;
 }
 
-/* Главная страница с Flexbox */
 .main-flex {
     display: flex;
     gap: 20px;
@@ -260,27 +259,12 @@ body > p {
     border-radius: 10px;
 }
 
-.meme-of-day {
+.meme_day .meme__image {
     width: 400px;
-}
-
-@keyframes floating {
-    0% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-8px);
-    }
-
-    100% {
-        transform: translateY(0);
-    }
 }
 
 .main-flex .meme {
     flex: 1;
-    animation: floating 3s ease-in-out infinite;
 }
 
 /* Форма */
@@ -342,4 +326,41 @@ body > p {
     );
 
     color: var(--color-text);
+}
+
+.dvd {
+    position: fixed;
+    top: 20px;
+    left: 0;
+
+    animation: move-horizontal 7s linear infinite alternate;
+}
+
+.dvd__vertical {
+    animation: move-vertical 5s linear infinite alternate;
+}
+
+.dvd__image {
+    width: 60px;
+    margin: 0;
+}
+
+@keyframes move-horizontal {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(100vw - 70px));
+    }
+}
+
+@keyframes move-vertical {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(calc(100vh - 100px));
+    }
 }
