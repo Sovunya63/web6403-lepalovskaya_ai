@@ -1,0 +1,345 @@
+:root {
+    --color-text: #16324f;
+    --color-title: #145f9b;
+    --color-link: #075797;
+    --color-note: #0d65ad;
+    --color-table-text: #114f7d;
+
+    --color-blue: #65b9e8;
+    --color-blue-light: #bfe9ff;
+    --color-blue-lighter: #d9f2ff;
+    --color-blue-border: #5aa8d8;
+    --color-blue-link-border: #6ab1dc;
+    --color-blue-border-light: #9bd4ee;
+    --color-blue-table: #79b9dc;
+
+    --color-table-light: #dff5ff;
+    --color-table-blue: #9ed9f6;
+    --color-caption-light: #eaf8ff;
+
+    --color-active: #1678c5;
+    --color-active-light: #54b9f7;
+    --color-active-border: #0f67ae;
+
+    --color-green-light: #f7ffea;
+    --color-green: #bce884;
+
+    --color-white: #ffffff;
+
+    --color-card: rgba(255, 255, 255, 0.92);
+    --color-text-background: rgba(255, 255, 255, 0.85);
+
+    --color-shadow: rgba(35, 105, 145, 0.18);
+    --color-shadow-strong: rgba(35, 105, 145, 0.25);
+
+    --color-title-shadow: #064c7c;
+}
+
+body {
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 0 20px;
+
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-text);
+
+    background-color: var(--color-blue);
+    background-image: url("images/winxp.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Заголовки */
+h1 {
+    color: var(--color-white);
+    font-size: 32px;
+    margin-bottom: 15px;
+
+    text-shadow:
+            1px 1px 2px var(--color-title-shadow),
+            0 0 5px var(--color-title-shadow);
+}
+
+h2 {
+    color: var(--color-title);
+    font-size: 22px;
+    margin-top: 0;
+}
+
+/* Меню */
+nav {
+    background: linear-gradient(
+            to bottom,
+            var(--color-white),
+            var(--color-blue-light)
+    );
+
+    padding: 15px;
+    margin-bottom: 30px;
+
+    border: 2px solid var(--color-blue-border);
+    border-radius: 14px;
+    box-shadow: 0 4px 10px var(--color-shadow-strong);
+}
+
+nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    margin: 4px;
+    padding: 8px 14px;
+
+    color: var(--color-link);
+    text-decoration: none;
+
+    background: linear-gradient(
+            to bottom,
+            var(--color-white),
+            var(--color-blue-lighter)
+    );
+
+    border: 1px solid var(--color-blue-link-border);
+    border-radius: 8px;
+}
+
+.nav-icon {
+    width: 26px;
+    height: 26px;
+    margin: 0;
+    border-radius: 0;
+}
+
+nav a:hover {
+    background: linear-gradient(
+            to bottom,
+            var(--color-green-light),
+            var(--color-green)
+    );
+}
+
+nav a.active {
+    background: linear-gradient(
+            to bottom,
+            var(--color-active-light),
+            var(--color-active)
+    );
+
+    color: var(--color-white);
+    border-color: var(--color-active-border);
+}
+
+/* Изображения */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+
+    margin: 15px auto;
+    border-radius: 8px;
+}
+
+/* Блоки с мемами */
+.meme {
+    background-color: var(--color-card);
+    padding: 20px;
+    margin-bottom: 25px;
+
+    border: 2px solid var(--color-blue-border-light);
+    border-radius: 14px;
+    box-shadow: 0 4px 10px var(--color-shadow);
+}
+
+.meme p {
+    margin-bottom: 0;
+}
+
+/* Таблица */
+#grade-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    background-color: var(--color-card);
+    box-shadow: 0 4px 10px var(--color-shadow);
+}
+
+th,
+td {
+    border: 1px solid var(--color-blue-table);
+    padding: 12px;
+}
+
+th {
+    background: linear-gradient(
+            to bottom,
+            var(--color-table-light),
+            var(--color-table-blue)
+    );
+
+    color: var(--color-table-text);
+}
+
+/* Выравнивание в таблице */
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Примечание */
+.grade-note {
+    color: var(--color-note);
+    font-weight: bold;
+}
+
+/* Галерея grid */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    align-items: start;
+}
+
+/* Карточки только внутри галереи */
+.gallery .meme {
+    padding: 0;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.gallery .meme img {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+}
+
+/* Подписи */
+.gallery .meme p {
+    margin: 0;
+    padding: 12px;
+
+    font-size: 14px;
+
+    background: linear-gradient(
+            to bottom,
+            var(--color-white),
+            var(--color-caption-light)
+    );
+}
+
+body > p {
+    background-color: var(--color-text-background);
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+/* Главная страница с Flexbox */
+.main-flex {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.intro {
+    flex: 1;
+}
+
+.intro p {
+    background-color: var(--color-text-background);
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+.meme-of-day {
+    width: 400px;
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.main-flex .meme {
+    flex: 1;
+    animation: floating 3s ease-in-out infinite;
+}
+
+/* Форма */
+#meme-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    padding: 20px;
+
+    background-color: var(--color-card);
+    border: 2px solid var(--color-blue-border-light);
+    border-radius: 14px;
+
+    box-shadow: 0 4px 10px var(--color-shadow);
+}
+
+#meme-form input {
+    padding: 10px;
+
+    font-family: inherit;
+    font-size: 16px;
+
+    border: 1px solid var(--color-blue-border);
+    border-radius: 8px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#meme-form button {
+    padding: 10px 16px;
+
+    font-family: inherit;
+    font-size: 16px;
+
+    color: var(--color-white);
+
+    background: linear-gradient(
+            to bottom,
+            var(--color-active-light),
+            var(--color-active)
+    );
+
+    border: 1px solid var(--color-active-border);
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+#meme-form button:hover {
+    background: linear-gradient(
+            to bottom,
+            var(--color-green-light),
+            var(--color-green)
+    );
+
+    color: var(--color-text);
+}
